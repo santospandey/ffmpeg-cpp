@@ -2,7 +2,9 @@
 
 #define _CRTDBG_MAP_ALLOC  
 #include <stdlib.h>  
-#include <crtdbg.h> 
+#ifdef _MSC_VER
+#include <crtdbg.h>
+#endif
 
 extern "C" {
 	#include <libavcodec/avcodec.h>

@@ -2,7 +2,7 @@
 
 #include "ffmpeg.h"
 
-#include "Frame Sinks/VideoFrameSink.h"
+#include "./VideoFrameSink.h"
 #include "Codecs/VideoCodec.h"
 #include "VideoFormatConverter.h"
 #include "Muxing/Muxer.h"

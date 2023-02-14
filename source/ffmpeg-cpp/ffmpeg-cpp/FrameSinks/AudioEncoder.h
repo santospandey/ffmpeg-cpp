@@ -3,7 +3,7 @@
 #include "ffmpeg.h"
 #include "std.h"
 
-#include "Frame Sinks/AudioFrameSink.h"
+#include "./AudioFrameSink.h"
 #include "Codecs/AudioCodec.h"
 #include "ConvertedAudioProcessor.h"
 #include "AudioFormatConverter.h"
