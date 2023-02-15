@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ffmpeg.h"
+#include "../ffmpeg.h"
 #include "VideoStreamInfo.h"
 #include "AudioStreamInfo.h"
-#include "std.h"
+#include "../std.h"
 
 namespace ffmpegcpp
 {

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "ffmpeg.h"
-#include "std.h"
+#include "../ffmpeg.h"
+#include "../std.h"
 
-#include "Demuxing/AudioInputStream.h"
-#include "Demuxing/VideoInputStream.h"
-#include "Demuxing/InputStream.h"
-#include "Sources/InputSource.h"
-#include "Info/ContainerInfo.h"
+#include "../Demuxing/AudioInputStream.h"
+#include "../Demuxing/VideoInputStream.h"
+#include "../Demuxing/InputStream.h"
+#include "../Sources/InputSource.h"
+#include "../Info/ContainerInfo.h"
 
 namespace ffmpegcpp
 {

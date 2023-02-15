@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Codec.h"
-#include "OpenCodec.h"
+#include "../OpenCodec.h"
 
 namespace ffmpegcpp
 {

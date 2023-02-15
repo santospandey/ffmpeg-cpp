@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ffmpeg.h"
-#include "std.h"
+#include "../ffmpeg.h"
+#include "../std.h"
 
 #include "VideoFrameSink.h"
 #include "VideoFilterInput.h"

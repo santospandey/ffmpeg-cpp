@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ffmpeg.h"
-#include "std.h"
+#include "../ffmpeg.h"
+#include "../std.h"
 #include "../FrameSinks/FrameSink.h"
-#include "Info/ContainerInfo.h"
-#include "Demuxing/StreamData.h"
+#include "../Info/ContainerInfo.h"
+#include "./StreamData.h"
 
 namespace ffmpegcpp
 {

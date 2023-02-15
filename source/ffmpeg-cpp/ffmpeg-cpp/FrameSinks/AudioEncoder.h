@@ -1,14 +1,14 @@
 #pragma once
 
-#include "ffmpeg.h"
-#include "std.h"
+#include "../ffmpeg.h"
+#include "../std.h"
 
 #include "./AudioFrameSink.h"
-#include "Codecs/AudioCodec.h"
-#include "ConvertedAudioProcessor.h"
-#include "AudioFormatConverter.h"
-#include "Muxing/Muxer.h"
-#include "Muxing/OutputStream.h"
+#include "../Codecs/AudioCodec.h"
+#include "../ConvertedAudioProcessor.h"
+#include "../AudioFormatConverter.h"
+#include "../Muxing/Muxer.h"
+#include "../Muxing/OutputStream.h"
 #include "OneInputFrameSink.h"
 
 namespace ffmpegcpp
