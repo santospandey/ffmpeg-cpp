@@ -86,6 +86,12 @@ namespace ffmpegcpp
 		CleanUp();
 	}
 
+    void Codec::SetFrameRate(int rate)
+    {
+        codecContext->framerate = (AVRational){rate, 1};
+        codecContext->time_base =(AVRational){1, rate};
+    }
+
 	void Codec::SetGlobalContainerHeader()
 	{
 		if (opened) throw FFmpegException("This flag should be set before opening the codec");

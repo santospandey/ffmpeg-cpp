@@ -22,6 +22,8 @@ namespace ffmpegcpp
 
 		void SetGenericOption(const char* name, const char* value);
 
+		void SetFrameRate(int rate);
+
 		void SetGlobalContainerHeader(); // used by the Muxer for configuration purposes
 
 	protected:
