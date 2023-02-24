@@ -1,8 +1,5 @@
-
 #include "ffmpeg.h"
-
 #include "Muxing/Muxer.h"
-
 #include "Sources/Demuxer.h"
 #include "Sources/InputSource.h"
 #include "Sources/RawAudioFileSource.h"
@@ -10,7 +7,6 @@
 #include "Sources/RawAudioDataSource.h"
 #include "Sources/RawVideoDataSource.h"
 #include "Sources/EncodedFileSource.h"
-
 #include "FrameSinks/VideoEncoder.h"
 #include "FrameSinks/AudioEncoder.h"
 #include "FrameSinks/Filter.h"

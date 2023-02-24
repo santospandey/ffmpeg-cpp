@@ -1,6 +1,7 @@
 #include "RawAudioFileSource.h"
 #include "FFmpegException.h"
 #include "std.h"
+#include <iostream>
 
 using namespace std;
 
@@ -30,6 +31,7 @@ namespace ffmpegcpp
 		}
 		catch (FFmpegException e)
 		{
+			
 			CleanUp();
 			throw e;
 		}
