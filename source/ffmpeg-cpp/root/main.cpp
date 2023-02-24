@@ -50,11 +50,12 @@ void PlayDemo()
 
 
 int main(int argc, char **argv){
+    // char *audio_source="";
     ffmpegcpp::AudioCodec *codec = new ffmpegcpp::AudioCodec("mpeg4");
     int sample_rate = codec->GetDefaultSampleRate();
-    std::cout<<"sample rate "<<sample_rate<<std::endl;
+    // std::cout<<"sample rate "<<sample_rate<<std::endl;
 
-    PlayDemo();
+    // PlayDemo();
 
     return 0;
 }
