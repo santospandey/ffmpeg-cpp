@@ -1,6 +1,6 @@
 #include "Filter.h"
-#include "FFmpegException.h"
-
+#include "../FFmpegException.h"
+#include <iostream>
 using namespace std;
 
 namespace ffmpegcpp
@@ -8,13 +8,16 @@ namespace ffmpegcpp
 
 	Filter::Filter(const char* filterString, FrameSink* target)
 	{
+		cout<<"In filter class constructor"<<endl;
 		this->targetMediaType = target->GetMediaType();
 		this->target = target->CreateStream();
 		this->filterString = filterString;
+		cout<<"in the end"<<endl;
 	}
 
 	AVMediaType Filter::GetMediaType()
 	{
+		
 		return targetMediaType;
 	}
 
@@ -197,6 +200,7 @@ namespace ffmpegcpp
 
 		// each new stream is associated with an input, and we need at least one frame from each input
 		// until we can configure the filter graph!
+		cout<<"In create stream"<<endl;
 		VideoFilterInput* input = new VideoFilterInput();
 		inputs.push_back(input);
 		return new FrameSinkStream(this, inputs.size() - 1);

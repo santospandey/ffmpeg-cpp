@@ -1,9 +1,11 @@
 #include "Muxer.h"
-#include "FFmpegException.h"
-#include "OutputStream.h"
-#include "CodecDeducer.h"
 
+#include "../FFmpegException.h"
+#include "OutputStream.h"
+#include "../CodecDeducer.h"
+#include <iostream>
 #include <string>
+
 
 using namespace std;
 
@@ -12,9 +14,13 @@ namespace ffmpegcpp
 
 	Muxer::Muxer(const char* fileName)
 	{
-		this->fileName = fileName;
+		cout<<"Inside Muxer class"<<endl;
+		
 
-		/* allocate the output media context */
+		
+		this->fileName = fileName;
+		
+		/**allocate the output media context */
 		avformat_alloc_output_context2(&containerContext, NULL, NULL, fileName);
 		if (!containerContext)
 		{

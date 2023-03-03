@@ -1,6 +1,6 @@
 #include "AudioCodec.h"
-#include "FFmpegException.h"
-
+#include "../FFmpegException.h"
+#include <iostream>
 using namespace std;
 
 namespace ffmpegcpp
@@ -8,11 +8,13 @@ namespace ffmpegcpp
 	AudioCodec::AudioCodec(const char* codecName)
 		: Codec(codecName)
 	{
+		
 	}
 
 	AudioCodec::AudioCodec(AVCodecID codecId)
 		: Codec(codecId)
 	{
+		cout<<"This is audiocodec class"<<endl;
 	}
 
 	AudioCodec::~AudioCodec()

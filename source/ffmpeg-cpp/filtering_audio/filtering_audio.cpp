@@ -1,28 +1,32 @@
 
 #include <iostream>
-
-#include "../ffmpeg-cpp/ffmpegcpp.h"
+#include <thread>
+#include "../../ffmpeg-cpp/ffmpegcpp.h"
 
 using namespace std;
 using namespace ffmpegcpp;
 
 int main()
+
 {
 	// This example will apply some filters to a video and write it back.
 	try
 	{
+		
+		std::cerr << std::flush;
+		std::this_thread::sleep_for(std::chrono::seconds(5));
 		// Create a muxer that will output the video as MKV.
-		Muxer* muxer = new Muxer("Vivaldi_filtered.aac");
+		Muxer *muxer = new Muxer("Vivaldi_filtered.aac");
 
 		// Create an MP3 codec that will encode the raw data.
-		AudioCodec* codec = new AudioCodec(AV_CODEC_ID_AAC);
+		AudioCodec *codec = new AudioCodec(AV_CODEC_ID_AAC);
 
 		// Create an encoder that will encode the raw audio data as MP3.
 		// Tie it to the muxer so it will be written to the file.
-		AudioEncoder* encoder = new AudioEncoder(codec, muxer);
+		AudioEncoder *encoder = new AudioEncoder(codec, muxer);
 
 		// Create a video filter and do some funny stuff with the video data.
-		Filter* filter = new Filter("areverse", encoder);
+		Filter *filter = new Filter("areverse", encoder);
 
 		// THIS COMMENTED EXAMPLE BELOW SHOWS A FILTER FROM AUDIO TO PNG
 		// It will render the waveform of the audio.
@@ -40,7 +44,7 @@ int main()
 		Filter* filter = new Filter("showwavespic=colors=white:s=512x64", encoder); */
 
 		// Load a video from a container and send it to the filter first.
-		Demuxer* demuxer = new Demuxer("../../../samples/Vivaldi_Sonata_eminor_.mp3");
+		Demuxer *demuxer = new Demuxer("../1.opus");
 		demuxer->DecodeBestAudioStream(filter);
 
 		// Prepare the output pipeline. This will push a small amount of frames to the file sink until it IsPrimed returns true.
@@ -51,7 +55,7 @@ int main()
 		{
 			demuxer->Step();
 		}
-		
+
 		// Save everything to disk by closing the muxer.
 		muxer->Close();
 	}
@@ -62,7 +66,9 @@ int main()
 		throw e;
 	}
 
-	cout << "Encoding complete!" << endl;
+	
+
+	cout << "Encoding auto complete!" << endl;
 	cout << "Press any key to continue..." << endl;
 
 	getchar();
